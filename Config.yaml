@@ -1,0 +1,13 @@
+input:
+  csv_path: data/sample_market.csv
+  date_col: date
+  price_col: close
+  date_format: null
+
+cycles_days: [5, 10, 20, 30, 45, 60, 90, 120, 180, 240, 360, 540, 720]
+kozyrev_phase_rate: 0.002
+gann_angles: [0, 45, 90, 135, 180, 225, 270, 315]
+
+export:
+  png_sizes: [[1600,1600],[1920,1080]]
+  svg: true
