@@ -1,0 +1,8 @@
+python - << 'PY'
+import numpy as np, pandas as pd
+from datetime import datetime
+dates = pd.date_range(end=datetime.utcnow().date(), periods=600, freq="D")
+price = 1800 + 20*np.sin(2*np.pi*dates.dayofyear/90) + 10*np.sin(2*np.pi*dates.dayofyear/29.5) + np.cumsum(np.random.normal(0,0.5,len(dates)))
+pd.DataFrame({"date":dates,"close":price}).to_csv("data/sample_market.csv",index=False)
+print("Sample data written: data/sample_market.csv")
+PY
